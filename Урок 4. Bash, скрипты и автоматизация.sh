@@ -27,3 +27,5 @@ done
 #Пункт 4.
 crontab -e
 0 4 * * * sudo du -sm /home/* > /var/log/userProfileSize.log
+#Все скрипты должны быть исполняемыми, по этому выполняем команду:
+chmod 755 ~/*.sh
