@@ -1,0 +1,54 @@
+# пункт 1:
+Name = input("Ваше имя? >>> ")
+age = int(input("Ваш возраст? >>> "))
+if age < 100:
+    age_answer = "еще молодой"
+else:
+    age_answer = "все равно молодой"
+print(f'Привет, {Name}! Ты {age_answer}!')
+# Пункт 2
+Seconds = int(input("Введите время в секундах >>> "))
+Hours = Seconds // 3600
+Minutes = Seconds % 3600 // 60
+Remains_seconds = Seconds % 60
+print(f"{Name}, такое кол-во секунд в {Hours}:{Minutes}:{Remains_seconds}")
+# Пункт 3
+Number: int = int(input(f"{Name}, введи число от 1 до 9 >>> "))
+NumberX2 = int(f'{Number}{Number}')
+NumberX3 = int(f'{NumberX2}{Number}')
+Number_sum = NumberX3 + NumberX2 + Number
+print(Number_sum)
+# Пункт 4
+print('За целое положительное число возьмем кол-во секунд')
+Max_number = -1
+while Seconds > 10:
+    Remains = Seconds % 10
+    Seconds //= 10
+    if Remains > Max_number:
+        Max_number = Remains
+print(f'Самая большая цифра ровна - {Max_number}')
+# Пункт 5
+Revenue = int(input("Введите сумму выручки >>> "))
+Expenses = int(input('Введите сумму расходов >>> '))
+Difference = Revenue - Expenses
+if Revenue > Expenses:
+    Staff = int(input('Введите кол-во сотрудников фирмы >>> '))
+    Profit_on_staff = Difference / Staff
+    Profitability = Difference / Revenue
+    print(f'Фирма получила прибыль в размере: {Difference}.')
+    print(f'Рентабельность фирмы: {Profitability}.')
+    print(f'Прибыль на одного сотрудника составила: {Profit_on_staff}.')
+else:
+    print(f'У фирмы убытки в размере: {Difference}')
+# Пункт 6
+Begin = int(input('Введите кол-во километров которое пробежал спортсмен в первый день >>> '))
+Target = int(input('Введите кол-во километров до которого необходимо улучшить результат >>> '))
+i = Begin
+Count = 1
+if Begin > Target:
+    print(f'{Name}, не следует поощерять регресс спортсмена!')
+while i < Target:
+    Count += 1
+    i = i * 1.1
+else:
+    print(f'На {Count} день спортсмен достиг результата в {Target} км.')
