@@ -52,3 +52,4 @@ while i < Target:
     i = i * 1.1
 else:
     print(f'На {Count} день спортсмен достиг результата в {Target} км.')
+input("Нажмите ENTER, чтобы закрыть")
