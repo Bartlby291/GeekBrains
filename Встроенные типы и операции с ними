@@ -1,0 +1,67 @@
+print('Пункт 1')
+Array = ["Иван", 29, [15, 20], None, 29.5]
+print(Array)
+for Unit in Array:
+    print(type(Unit))
+print('Пункт 2')
+Array[0:4] = Array[1], Array[0], Array[3], Array[2]
+print(Array)
+print('Пункт 3')
+Count = 0
+Seasons = {1: 'Зима', 2: 'Зима', 3: 'Весна', 4: 'Весна', 5: 'Весна', 6: 'Лето',
+           7: 'Лето', 8: 'Лето', 9: 'Осень', 10: 'Осень', 11: 'Осень', 12: 'Зима'}
+
+def Chek_error(Count):
+    try:
+        Month = input('Введите порядковый номер месяца в формате от 1 до 12 >>> ')
+        while Count < 10:
+            Count += 1
+            if type(Month) != 'int':
+                try:
+                    int(Month)
+                except:
+                    Chek_error(Count)
+            Month = int(Month)
+            if Month > 12:
+                Chek_error(Count)
+            else:
+                print(Seasons.get(Month))
+                break
+        else:
+            print('За 10 попыток вам так и не удалось ввести порядковый номер месяца в формате от 1 до 12 :-(')
+    except: None
+Chek_error(Count)
+print('Пункт 4')
+User_string = input('Напишите припев любимой песни >>> ')
+User_string_in_arr = User_string.split()
+for ind, el in enumerate(User_string_in_arr, 1):
+    el = el[0:10] if len(el) > 10 else el
+    print(ind, el)
+print('Пункт 5')
+Rang = [4, 8, 15, 16]
+
+
+def Sort_rang():
+    Rang.sort()
+    Rang.reverse()
+    print(Rang)
+
+
+Sort_rang()
+
+def Cycle_chk_err():
+    while len(Rang) < 6:
+        User_rang = input('Введите значения для занесения в рейтинг >>> ')
+        try:
+            int(User_rang)
+        except:
+            Cycle_chk_err()
+
+        Rang.append(int(User_rang))
+        Sort_rang()
+    else:
+        print('Список рейтинга заполнен')
+
+
+Cycle_chk_err()
+input('Нажмите ENTER для завершения.')
